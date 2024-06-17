@@ -1,1 +1,2 @@
-<img src="Portada Bizness.png"
+![Descripción de la imagen](Imagen1Bizness.png)
+
