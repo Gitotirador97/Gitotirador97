@@ -11,11 +11,11 @@ Empezaremos escaneando los puertos de la máquina victima y visualizamos los sig
 Si observamos en el puerto 3000 hay una web que esta creada con Node.js
 ![Descripción de la imagen](Imagen3Codify.png)
 
-Pero antes buscaremos sobre esta web subdirectorios interesantes como logins o archivos ocultos, para ello enumeraremos con la herramienta Nikto
-![Descripción de la imagen](Imagen4Codify.png)<br>
+Pero antes buscaremos sobre esta web subdirectorios interesantes como logins o archivos ocultos, para ello enumeraremos con la herramienta Nikto<br>
+![Descripción de la imagen](Imagen4Codify.png)
 ![Descripción de la imagen](Imagen5Codify.png)<br>
 Visualizamos una ruta de configuración que al parecer esta hecho en Wordpress pero sin éxito:
-![Descripción de la imagen](Imagen6Codify.png)
+![Descripción de la imagen](Imagen6Codify.png)<br>
 Vamos a utilizar otra herramienta ya conocida como dirsearch en busca de mas subdirectorios sobre el puerto 3000 y visualizamos un "About" y "Editor"
 ![Descripción de la imagen](Imagen7Codify.png)
 
@@ -36,7 +36,8 @@ Ganamos acceso!
 ![Descripción de la imagen](Imagen17Codify.png)
 
 ## Escalada Privilegios
-Al hacer "sudo -" visualizamos que este usuario tiene permisos en la siguiente ruta:[Descripción de la imagen](Imagen18Codify.png)<br>
+Al hacer "sudo -" visualizamos que este usuario tiene permisos en la siguiente ruta:
+![Descripción de la imagen](Imagen18Codify.png)<br>
 Al leer dicho archivo al parecer debemos generar un script en Python que haga fuerza bruta para conseguir la contraseña del usuario del SQL
 [Explicación]
 Esto significa que la entrada del usuario (USER_PASS) se trata como un patrón y, si incluye caracteres globales como * o ?, potencialmente puede coincidir con cadenas no deseadas.
@@ -44,8 +45,8 @@ Esto significa que la entrada del usuario (USER_PASS) se trata como un patrón y
 Por ejemplo, si la contraseña real (DB_PASS) es contraseña123 y el usuario ingresa * como contraseña (USER_PASS), la coincidencia del patrón será exitosa porque * coincide con cualquier cadena, lo que resulta en un acceso no autorizado.
 
 Esto significa que podemos aplicar fuerza bruta a cada carácter en DB_PASS
-![Descripción de la imagen](Imagen19Codify.png)<br>
-Script en python que hace esto mismo
+![Descripción de la imagen](Imagen19Codify.png)
+Script en python que hace esto mismo<br>
 ![Descripción de la imagen](Imagen20Codify.png)<br>
 Ejecutamos el script
 ![Descripción de la imagen](Imagen21Codify.png)<br>
