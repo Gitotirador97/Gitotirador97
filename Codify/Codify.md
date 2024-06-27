@@ -13,7 +13,7 @@ Si observamos en el puerto 3000 hay una web que esta creada con Node.js
 
 Pero antes buscaremos sobre esta web subdirectorios interesantes como logins o archivos ocultos, para ello enumeraremos con la herramienta Nikto<br>
 ![Descripción de la imagen](Imagen4Codify.png)
-![Descripción de la imagen](Imagen5Codify.png)
+![Descripción de la imagen](Imagen5Codify.png)<br>
 Visualizamos una ruta de configuración que al parecer esta hecho en Wordpress pero sin éxito:
 ![Descripción de la imagen](Imagen6Codify.png)<br>
 Vamos a utilizar otra herramienta ya conocida como dirsearch en busca de mas subdirectorios sobre el puerto 3000 y visualizamos un "About" y "Editor"
