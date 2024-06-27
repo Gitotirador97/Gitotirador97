@@ -1,6 +1,6 @@
 ![Descripción de la imagen](PortadaCodify.png)
 ## INTRODUCCION
-Walktrough de la Maquina Codify, pasos que segui para lograr vulnerarla con éxito.<br/>
+Walktrough de la Maquina Codify, pasos que seguir para lograr vulnerarla con éxito.<br/>
 <br />
 
 ## RECONOCIMIENTO
@@ -12,8 +12,8 @@ Si observamos en el puerto 3000 hay una web que esta creada con Node.js
 ![Descripción de la imagen](Imagen3Codify.png)
 
 Pero antes buscaremos sobre esta web subdirectorios interesantes como logins o archivos ocultos, para ello enumeraremos con la herramienta Nikto<br>
-![Descripción de la imagen](Imagen4Codify.png)<br>
-![Descripción de la imagen](Imagen5Codify.png)<br>
+![Descripción de la imagen](Imagen4Codify.png)
+![Descripción de la imagen](Imagen5Codify.png)
 Visualizamos una ruta de configuración que al parecer esta hecho en Wordpress pero sin éxito:
 ![Descripción de la imagen](Imagen6Codify.png)<br>
 Vamos a utilizar otra herramienta ya conocida como dirsearch en busca de mas subdirectorios sobre el puerto 3000 y visualizamos un "About" y "Editor"
@@ -44,11 +44,11 @@ Esto significa que la entrada del usuario (USER_PASS) se trata como un patrón y
 
 Por ejemplo, si la contraseña real (DB_PASS) es contraseña123 y el usuario ingresa * como contraseña (USER_PASS), la coincidencia del patrón será exitosa porque * coincide con cualquier cadena, lo que resulta en un acceso no autorizado.
 
-Esto significa que podemos aplicar fuerza bruta a cada carácter en DB_PASS
+Por lo tanto podemos aplicar fuerza bruta a cada carácter en DB_PASS
 ![Descripción de la imagen](Imagen19Codify.png)
 Script en python que hace esto mismo<br>
 ![Descripción de la imagen](Imagen20Codify.png)<br>
 Ejecutamos el script<br>
-![Descripción de la imagen](Imagen21Codify.png)
+![Descripción de la imagen](Imagen21Codify.png)<br>
 Al hacer ya 'su root' y poner la contraseña descifrada con el script ejecutado anteriormente que funciona con fuerza bruta conseguimos acceso y bandera de root!
 ![Descripción de la imagen](Imagen22Codify.png)
