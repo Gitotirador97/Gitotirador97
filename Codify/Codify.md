@@ -1,4 +1,4 @@
-![Descripción de la imagen]()
+![Descripción de la imagen](PortadaCodify.png)
 ## INTRODUCCION
 Walktrough de la Maquina Codify, pasos que segui para lograr vulnerarla con éxito.<br/>
 <br />
@@ -12,7 +12,7 @@ Si observamos en el puerto 3000 hay una web que esta creada con Node.js
 ![Descripción de la imagen](Imagen3Codify.png)
 
 Pero antes buscaremos sobre esta web subdirectorios interesantes como logins o archivos ocultos, para ello enumeraremos con la herramienta Nikto<br>
-![Descripción de la imagen](Imagen4Codify.png)
+![Descripción de la imagen](Imagen4Codify.png)<br>
 ![Descripción de la imagen](Imagen5Codify.png)<br>
 Visualizamos una ruta de configuración que al parecer esta hecho en Wordpress pero sin éxito:
 ![Descripción de la imagen](Imagen6Codify.png)<br>
@@ -38,8 +38,8 @@ Ganamos acceso!
 ## Escalada Privilegios
 Al hacer "sudo -" visualizamos que este usuario tiene permisos en la siguiente ruta:
 ![Descripción de la imagen](Imagen18Codify.png)<br>
-Al leer dicho archivo al parecer debemos generar un script en Python que haga fuerza bruta para conseguir la contraseña del usuario del SQL
-[Explicación]
+Al leer dicho archivo al parecer debemos generar un script en Python que haga fuerza bruta para conseguir la contraseña del usuario del SQL<br>
+[IMPORTANTE Explicación!]<br>
 Esto significa que la entrada del usuario (USER_PASS) se trata como un patrón y, si incluye caracteres globales como * o ?, potencialmente puede coincidir con cadenas no deseadas.
 
 Por ejemplo, si la contraseña real (DB_PASS) es contraseña123 y el usuario ingresa * como contraseña (USER_PASS), la coincidencia del patrón será exitosa porque * coincide con cualquier cadena, lo que resulta en un acceso no autorizado.
@@ -48,7 +48,7 @@ Esto significa que podemos aplicar fuerza bruta a cada carácter en DB_PASS
 ![Descripción de la imagen](Imagen19Codify.png)
 Script en python que hace esto mismo<br>
 ![Descripción de la imagen](Imagen20Codify.png)<br>
-Ejecutamos el script
-![Descripción de la imagen](Imagen21Codify.png)<br>
+Ejecutamos el script<br>
+![Descripción de la imagen](Imagen21Codify.png)
 Al hacer ya 'su root' y poner la contraseña descifrada con el script ejecutado anteriormente que funciona con fuerza bruta conseguimos acceso y bandera de root!
 ![Descripción de la imagen](Imagen22Codify.png)
